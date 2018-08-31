@@ -7,16 +7,19 @@ var move_tipe = 0
 var UP = Vector2(0,-1)
 var motion = Vector2()
 var Gravity = 20
+var gear = null
 onready var sprite = $Sprite
 
 onready var anim_player =  get_node("Sprite/Animation/AnimationPlayer")
 var anim = ""
 var anim_new = ""
-var anim_speed = 1.0
+var anim_speed = 0
 var anim_blend = 0
 
-export (int) var speed = 400
-export (int) var jump_speed = 200
+export (float) var speed 
+export (float) var jump_speed 
+export (float) var buff_move_speed 
+export (float) var buff_attack_speed 
 
 func _ready():
 	change_state("Idle")
@@ -34,6 +37,7 @@ func moves():
 				can_jump = true
 			if dir.x == 1 || dir.x == -1:
 				sprite.set_scale(Vector2(dir.x,1))
+				gear.set_scale(Vector2(dir.x,1))
 			motion.x = dir.x * speed
 			if dir.y == 1 && can_jump:
 				change_state("Jump")

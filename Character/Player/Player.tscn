@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Character/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Character/Player/Animations/Animation.tscn" type="PackedScene" id=2]
@@ -7,45 +7,45 @@
 [ext_resource path="res://Character/Player/Move.gd" type="Script" id=5]
 [ext_resource path="res://Character/Player/Jump.gd" type="Script" id=6]
 [ext_resource path="res://Character/Player/Fall.gd" type="Script" id=7]
-[ext_resource path="res://Character/Player/Attack1.gd" type="Script" id=8]
-[ext_resource path="res://Character/Player/Attack2.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 17.6326, 113.42 )
+extents = Vector2( 40, 140.352 )
 
 [node name="Player" type="KinematicBody2D"]
 
+position = Vector2( 0, 20 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "collision" ]
-speed = 400
-jump_speed = 800
+_sections_unfolded = [ "Transform", "collision" ]
+speed = 400.0
+jump_speed = 800.0
+buff_move_speed = 0.0
+buff_attack_speed = null
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-_sections_unfolded = [ "Offset" ]
+position = Vector2( 0.587311, 2.68592 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 0, 20 )
 
 [node name="Animation" parent="Sprite" index="0" instance=ExtResource( 2 )]
-
-scale = Vector2( 0.3, 0.3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-position = Vector2( 0, 77.1863 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="PlayerControl" type="Node" parent="." index="2"]
 
 script = ExtResource( 3 )
 
 [node name="State" type="Node" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="Idle" type="Node" parent="State" index="0"]
 
@@ -65,16 +65,9 @@ script = ExtResource( 7 )
 
 [node name="Dead" type="Node" parent="State" index="4"]
 
-[node name="Attack1" type="Node" parent="State" index="5"]
+[node name="GearAnchor" type="Position2D" parent="." index="4"]
 
-script = ExtResource( 8 )
-
-[node name="Attack2" type="Node" parent="State" index="6"]
-
-script = ExtResource( 9 )
-
-[node name="Attack3" type="Node" parent="State" index="7"]
-
-[node name="Attack4" type="Node" parent="State" index="8"]
+position = Vector2( 0, 14.7649 )
+_sections_unfolded = [ "Transform" ]
 
 

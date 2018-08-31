@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 680, 50 )
+extents = Vector2( 864, 50 )
 
 [node name="Level1" type="Node"]
 
@@ -14,7 +14,8 @@ extents = Vector2( 680, 50 )
 position = Vector2( 736, 544 )
 collision_layer = 2
 collision_mask = 2
-_sections_unfolded = [ "Collision", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+buff_move_speed = null
 
 [node name="Camera2D" type="Camera2D" parent="." index="1"]
 
@@ -45,6 +46,7 @@ editor_draw_drag_margin = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 2
 collision_mask = 2

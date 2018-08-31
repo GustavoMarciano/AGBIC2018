@@ -18,7 +18,7 @@ func choose(choises):
 	var rand_index = randi() % choises.size()
 	return choises[rand_index]
 
-func finds_node(node):
+func find_node(node):
 	return self.main_node.find_node(node)
 
 func attach(src_node, src_signal, trg_node, trg_func):
