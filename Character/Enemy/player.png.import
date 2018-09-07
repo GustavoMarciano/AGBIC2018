@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/oraoraora.png-6b4cad7c9ae6747b0a4ab3cbf61d101b.stex"
+path="res://.import/player.png-23117a63657af8ddc8ad140852f5f4ba.stex"
 
 [deps]
 
-source_file="res://Character/Player/Animations/oraoraora.png"
-dest_files=[ "res://.import/oraoraora.png-6b4cad7c9ae6747b0a4ab3cbf61d101b.stex" ]
+source_file="res://Character/Player/player.png"
+dest_files=[ "res://.import/player.png-23117a63657af8ddc8ad140852f5f4ba.stex" ]
 
 [params]
 

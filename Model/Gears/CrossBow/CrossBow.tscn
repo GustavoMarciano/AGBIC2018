@@ -3,8 +3,9 @@
 [ext_resource path="res://Character/Player/Animations/Personagem_Test.png" type="Texture" id=1]
 [ext_resource path="res://Model/Gears/Gear.gd" type="Script" id=2]
 
-[node name="CrossBow" type="Sprite" index="0"]
+[node name="CrossBow" type="Sprite"]
 
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( -71.064, -15.6594 )

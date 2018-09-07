@@ -43,7 +43,7 @@ func remote_call(src_node, method, arg0 = null, arg1 = null):
 		return src_node.call(method)
 
 func _get_mouse_pos():
-	return get_viewport().get_mouse_pos()
+	return get_viewport().get_mouse_position()
 
 func _get_main_node():
 	var root = get_tree().get_root()

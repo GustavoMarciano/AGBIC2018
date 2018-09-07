@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Character/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Character/Enemy/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Character/Sprite.gd" type="Script" id=2]
 [ext_resource path="res://Character/Player/Animations/Animation.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Character/Player/Control.gd" type="Script" id=4]
+[ext_resource path="res://Character/Enemy/Control.gd" type="Script" id=4]
 [ext_resource path="res://Character/Idle.gd" type="Script" id=5]
 [ext_resource path="res://Character/Move.gd" type="Script" id=6]
 
@@ -12,7 +12,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 30, 20 )
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Enemy" type="KinematicBody2D" index="0" groups=[
 "UNITY",
 ]]
 
@@ -23,9 +23,9 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "collision" ]
-side = "PLAYER"
-speed = 400.0
-buff_move_speed = 0.0
+side = "ENEMY"
+speed = 200.0
+buff_move_speed = null
 buff_attack_speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
@@ -35,12 +35,13 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 0, 20 )
 script = ExtResource( 2 )
 
 [node name="Animation" parent="Sprite" index="0" instance=ExtResource( 3 )]
 
-[node name="PlayerControl" type="Node" parent="." index="2"]
+[node name="AIControl" type="Node" parent="." index="2"]
 
 script = ExtResource( 4 )
 
@@ -57,10 +58,5 @@ script = ExtResource( 6 )
 animation_speed = 0.5
 
 [node name="Dead" type="Node" parent="State" index="2"]
-
-[node name="GearAnchor" type="Position2D" parent="." index="4"]
-
-position = Vector2( 0, 14.7649 )
-_sections_unfolded = [ "Transform" ]
 
 
